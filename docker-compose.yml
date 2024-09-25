@@ -1,0 +1,14 @@
+services:
+  auth-server:
+    image: vjiou-auth
+    container_name: auth-server
+    ports:
+      - "3000:3000"
+  rtmp-server:
+    container_name: rtmp-server
+    image: nginx
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=vjiou.com
+      - NGINX_PORT=80
